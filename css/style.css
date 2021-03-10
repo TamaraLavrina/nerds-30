@@ -1,0 +1,110 @@
+@font-face {
+	font-family:"Roboto";
+	font-weight: 400;
+	font-style: normal;
+	src: local("Roboto"),
+	    url("../fonts/roboto.woff2") format("woff2"),
+			url("../fonts/roboto.woff") format("woff");
+}
+@font-face{
+	font-family:"Roboto";
+	font-weight: 700;
+	font-style: normal;
+	src: local("Roboto"),
+			url("../fonts/robotobold.woff2") format("woff2"),
+			url("../fonts/robotobold.woff") format("woff");
+}
+@font-face{
+	font-family:"Roboto";
+	font-weight: 500;
+	font-style: normal;
+	src: local("Roboto"),
+			url("../fonts/robotomedium.woff2.woff2") format("woff2"),
+			url("../fonts/robotomedium.woff") format("woff");
+}
+
+
+/* Variables */
+:root {
+--basic-font: "Roboto", "Arial", sans-serif;
+--basic-text:#283136;
+--header-text:#000000;
+--button-basic: #FB565A;
+--background-border: #EEEEEE;
+--special-presentation: #EFC849;
+--special-tabs: #00CA74;
+--social: #E1E1E1;
+--border: #D7DCDE;
+--basic-lay: #FFFFFF;
+
+}
+
+/* Global */
+.page {
+	height: 100%;
+}
+.page-body{
+	min-width: 1440px;
+	margin: 0;
+	padding: 0;
+	font-family: var(--basic-font);
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: var(--basic-text);
+	background-color: var(--basic-lay);
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+	align-content: start;
+}
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.header-main-wrapper-colored-block{
+    background-color: var(--background-border);
+}
+.header{
+  min-height: 114px;
+  width: 1157px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--basic-font);
+  color: var(--header-text);
+  text-transform: uppercase;
+}
+.header nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.header-navigation{
+  list-style: none;
+  text-decoration: none;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header-navigation a:hover,
+.header-navigation a:focus{
+  color: var(--header-text)
+}
