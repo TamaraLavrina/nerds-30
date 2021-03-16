@@ -14,195 +14,229 @@
   <link rel="manifest" href="manifest.webmanifest">
 </head>
 
-<body>
+<body class="page-body">
 
   <div class="header-main-wrapper-colored-block">
     <header class="header">
-      <nav>
-        <a href="index.html">
+      <nav class="navigation-bar">
+        <a class="logo" href=#>
           <img src="img/nerds-logo.svg" width="165" height="65" alt="логотип компании Nerds">
         </a>
         <ul class="header-navigation">
           <li><a href="index.html">студия</a></li>
           <li><a href=#>клиенты</a></li>
-          <li><a href=#>магазин</a></li>
+          <li><a class="current" href=#>магазин</a></li>
           <li><a href=#>контакты</a></li>
         </ul>
-        <a href="#" class="header-cart"> Корзина</a>
+        <a href="#" class="header-cart current"> Корзина</a>
       </nav>
     </header>
   </div>
   <main>
-    <h1> Магазин готовых решений</h1>
-    <section>
-      <h2>Фильтр товаров</h2>
-      <form method="get" action="https://echo.htmlacademy.ru">
-        <fieldset>
-          <legend>сетка:</legend>
-          <ul>
-            <li>
-              <input type="radio" name="layout-group" value="adaptive" id="filter-adaptive-layout">
-              <label for="filter-adaptive-layout">адаптивная</label>
-            </li>
-            <li>
-              <input type="radio" name="layout-group" value="static-layout" id="filter-static-layout">
-              <label for="filter-static-layout">фиксированная</label>
-            </li>
-            <li>
-              <input type="radio" name="layout-group" value="liquid-layout" id="filter-liquid-layout">
-              <label for="filter-liquid-layout">резиновая</label>
-            </li>
-          </ul>
-        </fieldset>
-        <fieldset>
-          <legend>особенности:</legend>
-          <ul>
-            <li>
-              <input type="checkbox" name="" id="" checked>
-              <label for="">Слайдер</label>
-            </li>
-            <li>
-              <input type="checkbox" name="features" id="filter-features">
-              <label for="filter-features">Блок преимуществ</label>
-            </li>
-            <li>
-              <input type="checkbox" name="news" id="filter-news" checked>
-              <label for="filter-news">Новости</label>
-            </li>
-            <li>
-              <input type="checkbox" name="gallery-f" id="filter-gallery-f">
-              <label for="filter-gallery-f">Галерея</label>
-            </li>
-            <li>
-              <input type="checkbox" name="cart-block" id="filter-cart-block">
-              <label for="filter-cart-block">Корзина</label>
-            </li>
-          </ul>
-        </fieldset>
-        <button type="submit">Показать</button>
-      </form>
-    </section>
-    <section>
-      <h3 class="visually-hidden">Сортировка</h3>
-      <p> сортировать:</p>
-      <ul>
-        <li><a href=#>по цене</a></li>
-        <li><a href=#>по типу</a></li>
-        <li><a href=#>по названию</a></li>
-      </ul>
-      <div class="button-sort">
-        <a href=# class="sort-down"><img src="img/icon-down-dir.svg" width="11" height="10"
-            alt="Сортировать по убыванию"></a>
-        <a href=# class="sort-up"><img src="img/icon-up-dir.svg" width="11" height="10"
-            alt="Сортировать по возрастанию"></a>
+    <div class="header-main-wrapper-colored-block">
+      <div class="container">
+        <h1 class="main-head-text"> Магазин готовых шаблонов</h1>
       </div>
+    </div>
+    <div class="container">
+      <div class="sort-bar">
+        <div class="sort-header">Стоимость:</div>
+        <div class="sort-header"> сортировать:</div>
+        <div class="last-block">
+          <ul class="sort-list">
+            <li><a class="sort-current" href=#>по цене</a></li>
+            <li><a href=#>по типу</a></li>
+            <li><a href=#>по названию</a></li>
+          </ul>
+          <div class="button-sort">
+            <a href=# class="sort-down"><img src="img/icon-down-dir.svg" width="11" height="10"
+                alt="Сортировать по убыванию"></a>
+            <a href=# class="sort-up"><img src="img/icon-up-dir.svg" width="11" height="10"
+                alt="Сортировать по возрастанию"></a>
+          </div>
+        </div>
+      </div>
+      <!--основное содержимое - фильтр и карточки-->
+      <section class="main-content">
+        <h2 class="visually-hidden">фильтр товаров</h2>
+
+        <!--Форма фильтр-->
+        <form class="filter-form" method="get" action="https://echo.htmlacademy.ru">
+          <fieldset class="filter-item">
+            <legend class="visually-hidden">Цена:</legend>
+            <div class="range-filter">
+              <div class="range-controls">
+                <div class="scale">
+                  <div class="bar" style="width: 70%; margin-left: 10%"></div>
+                  <div class="toggle toggle-min" tabindex="0" style="left: 10%"></div>
+                  <div class="toggle toggle-max" tabindex="0" style="left:72%"></div>
+                </div>
+              </div>
+              <div class="price-controls">
+                <label class="min-price">
+                  <input type="number" name="min-price" value="0">
+                </label>
+                <p>—</p>
+                <label class="max-price">
+                  <input type="number" name="max-price" value="15000">
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>сетка:</legend>
+            <ul>
+              <li>
+                <input type="radio" name="layout-group" value="adaptive" id="filter-adaptive-layout">
+                <label for="filter-adaptive-layout">адаптивная</label>
+              </li>
+              <li>
+                <input type="radio" name="layout-group" value="static-layout" id="filter-static-layout">
+                <label for="filter-static-layout">фиксированная</label>
+              </li>
+              <li>
+                <input type="radio" name="layout-group" value="liquid-layout" id="filter-liquid-layout">
+                <label for="filter-liquid-layout">резиновая</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>особенности:</legend>
+            <ul>
+              <li>
+                <input type="checkbox" name="" id="" checked>
+                <label for="">Слайдер</label>
+              </li>
+              <li>
+                <input type="checkbox" name="features" id="filter-features">
+                <label for="filter-features">Блок преимуществ</label>
+              </li>
+              <li>
+                <input type="checkbox" name="news" id="filter-news" checked>
+                <label for="filter-news">Новости</label>
+              </li>
+              <li>
+                <input type="checkbox" name="gallery-f" id="filter-gallery-f">
+                <label for="filter-gallery-f">Галерея</label>
+              </li>
+              <li>
+                <input type="checkbox" name="cart-block" id="filter-cart-block">
+                <label for="filter-cart-block">Корзина</label>
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit">Показать</button>
+        </form>
+       <!--карточки товаров - разложить гридами-->
+        <div class="card-box">
+          <h2 class="visually-hidden">Карточки макетов</h2>
+          <ul class="design-layout-cards">
+            <li class="card-li">
+               <a href="product.html">
+                <img class="card-product" src="img/img-sedona-1.jpg" width="358" height="578" alt="Макет Седона">
+              </a>
+              <div class="mask-shape">
+                <h3>Sedona</h3>
+                <p>Информационный сайт для туристов</p>
+                <button class="button price-button" type="button">9 990 p</button>
+              </div>
+            </li>
+            <li class="card-li">
+                <a href="product.html">
+                <img src="img/Mask-2-Pink.jpg" width="358" height="578" alt="Макет Pink">
+              </a>
+              <div class="mask-shape">
+                <h3>Pink APP</h3>
+                <p>Продуктовый лендинг приложения для iOS и Android</p>
+                <button class="button price-button" type="button">9 990 p</button>
+              </div>
+            </li>
+            <li class="card-li">
+               <a href="product.html">
+                <img src="img/Mask-3-Borodinski.jpg" width="358" height="578" alt="Макет Borodinski">
+              </a>
+              <div class="mask-shape">
+                <h3>Borodinski</h3>
+                <p>Сайт салона красоты. Для мужчин, да.</p>
+                <button class="button price-button" type="button">9 990 p</button>
+              </div>
+            </li>
+            <li class="card-li">
+                <a href="product.html">
+                <img src="img/Mask-4-Mishka.jpg" width="358" height="578" alt="Макет Mishka">
+              </a>
+              <div class="mask-shape">
+                <h3>Mishka</h3>
+                <p>Интернет-магазин вязаных игрушек</p>
+                <button class="button price-button" type="button">9 990 p</button>
+              </div>
+            </li>
+            <li class="card-li">
+                <a href="product.html">
+                <img src="img/Mask-5-Education.jpg" width="358" height="578" alt="Макет образовательной платформы">
+              </a>
+              <div class="mask-shape">
+                <h3>A Plus</h3>
+                <p>Лендинг курсов повышения квалификации</p>
+                <button class="button price-button" type="button">9 990 p</button>
+              </div>
+            </li>
+            <li class="card-li">
+                <a href="product.html">
+                <img src="img/Mask-6-Beer.jpg" width="358" height="578" alt="Макет интернет-магаизна крафтового кваса">
+              </a>
+              <div class="mask-shape">
+                <h3>КВАСТ</h3>
+                <p>Промо-сайт производителя крафтового кваса</p>
+                <button class="button price-button" type="button">9 990 p</button>
+              </div>
+            </li>
+          </ul>
+      </div>
+      </section>
+
+
+    <ul class="pagination">
+      <li>
+        <a  class="current-pagination" href="#">1</a>
+      </li>
+      <li>
+        <a href=#>2</a>
+      </li>
+      <li>
+        <a href="#">3</a>
+      </li>
+      <li>
+        <a class="next-pagination" href="#">Следующая</a>
+      </li>
+    </ul>
     </section>
-    <section>
-      <h2 class="visually-hidden">Карточки товаров</h2>
-      <ul>
-        <li>
-          <div class="browser">три кружка - как их верстать?</div>
-          <a href="product.html">
-            <img src="img/Mask-1-Sedona.jpg" width="358" height="578" alt="Макет Седона">
-          </a>
-          <div class="mask-shape">
-            <h3>Sedona</h3>
-            <p>Информационный сайт для туристов</p>
-            <button type="button">9 990 p</button>
-          </div>
-        </li>
-        <li>
-          <div class="browser">три кружка - как их верстать?</div>
-          <a href="product.html">
-            <img src="img/Mask-2-Pink.jpg" width="358" height="578" alt="Макет Pink">
-          </a>
-          <div class="mask-shape">
-            <h3>Pink APP</h3>
-            <p>Продуктовый лендингприложения для iOS и Android</p>
-            <button type="button">9 990 p</button>
-          </div>
-        </li>
-        <li>
-          <div class="browser">три кружка - как их верстать?</div>
-          <a href="product.html">
-            <img src="img/Mask-3-Borodinski.jpg" width="358" height="578" alt="Макет Borodinski">
-          </a>
-          <div class="mask-shape">
-            <h3>Borodinski</h3>
-            <p>Макет Барбершопа</p>
-            <button type="button">9 990 p</button>
-          </div>
-        </li>
-        <li>
-          <div class="browser">три кружка - как их верстать?</div>
-          <a href="product.html">
-            <img src="img/Mask-4-Mishka.jpg" width="358" height="578" alt="Макет Mishka">
-          </a>
-          <div class="mask-shape">
-            <h3>Mishka</h3>
-            <p>Макет интернет-магазина милых и забавных интерьерных вещичек</p>
-            <button type="button">9 990 p</button>
-          </div>
-        </li>
-        <li>
-          <div class="browser">три кружка - как их верстать?</div>
-          <a href="product.html">
-            <img src="img/Mask-5-Education.jpg" width="358" height="578" alt="Макет образовательной платформы">
-          </a>
-          <div class="mask-shape">
-            <h3>Учеба</h3>
-            <p>Макет образовательной платформы</p>
-            <button type="button">9 990 p</button>
-          </div>
-        </li>
-        <li>
-          <div class="browser">три кружка - как их верстать?</div>
-          <a href="product.html">
-            <img src="img/Mask-6-Beer.jpg" width="358" height="578" alt="Макет интернет-магаизна крафтового кваса">
-          </a>
-          <div class="mask-shape">
-            <h3>Крафтовый квас всему голова</h3>
-            <p>Макет интернет-магаизна крафтового пива</p>
-            <button type="button">9 990 p</button>
-          </div>
-        </li>
-      </ul>
-      <ul class="pagination">
-        <li>
-          <a href="#">1</a>
-        </li>
-        <li>
-          <a>2</a>
-        </li>
-        <li>
-          <a href="#">3</a>
-        </li>
-        <li>
-          <a href="#">Следующая</a>
-        </li>
-      </ul>
-    </section>
+    </div>
+    </div>
   </main>
   <footer>
     <div class="footer-map">
       <img src="img/map 1.jpg" width="1440" height="416">
     </div>
-    <div class="footer-centner">
-      <div class="contacts">
-        <h3>NЁRDS DESIGN STUDIO</h3>
-        <address>191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
-        <a href="tel:+7812757575">тел. +7 (812) 275-75-75</a>
-      </div>
+
+
+    <div class="container">
+      <section class="friendship-social-contacts">
+        <h2 class="visually-hidden">Давайте дружить - контакты</h2>
+        <div class="friends-text">
+          <p class="instead-head">Давайте дружить, это выгодно!</p>
+          <p class="small-text">Скидка 10% для друзей из социальных сетей.</p>
+        </div>
+
+        <ul class="social">
+          <li><a href=#><img src="img/vk-icon.svg" width="26" height="15" alt="аккаунт студии Nerds в VK"></a></li>
+          <li><a href=#><img src="img/fb-icon.svg" width="12" height="22" alt="аккаунт студии Nerds в Facebook"></a>
+          </li>
+          <li><a href=#><img src="img/insta-icon.svg" width="21" height="21" alt="аккаунт студии Nerds в Instagram"></a>
+          </li>
+        </ul>
+      </section>
     </div>
-    <section>
-      <h2 class="visually-hidden">friendship-social-contacts</h2>
-      <p class="instead-head">Давайте дружить, это выгодно!</p>
-      <p class="small-text">Скидка 10% для друзей из социальных сетей.</p>
-      <ul class="social">
-        <li><a href=#>VK</a></li>
-        <li><a href=#>fb</a></li>
-        <li><a href=#>insta</a></li>
-      </ul>
-    </section>
+
   </footer>
 </body>
