@@ -95,6 +95,7 @@ img {
 }
 .header-main-wrapper-colored-block{
   background-color: var(--background-border);
+  padding-bottom: 1px;
 }
 .header{
   min-height: 114px;
